@@ -1,4 +1,0 @@
-C:/Users/шл/Desktop/OPI8/build/CMakeFiles/OPI.dir
-C:/Users/шл/Desktop/OPI8/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/шл/Desktop/OPI8/build/CMakeFiles/ZERO_CHECK.dir
-C:/Users/шл/Desktop/OPI8/build/game_lib/CMakeFiles/game_lib.dir
