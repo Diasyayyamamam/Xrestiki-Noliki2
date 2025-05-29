@@ -3,7 +3,6 @@
 #include "settings.h"
 #include <fstream>
 #include <iostream>
-#include <conio.h>
 
 void saveHistory(std::string winner) {
     std::ofstream history("history.txt", std::ios::app);
@@ -35,6 +34,7 @@ void showHistory() {
     }
     history.close();
 
-    std::cout << "\nPress any key to return to the menu...";
-    _getch();
+    std::cout << "\nPress Enter to return to the menu...";
+    std::cin.ignore();
+    std::cin.get();
 }
