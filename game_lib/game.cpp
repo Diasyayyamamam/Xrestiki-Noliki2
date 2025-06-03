@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include <limits>
-#include <conio.h>
 
 using namespace std;
 
@@ -64,7 +63,8 @@ void startGame() {
         cout << currentName << " (" << currentPlayer << "), enter row and column (1-" << boardSize << "): ";
         int row, col;
         cin >> row >> col;
-        if (row < 1 || row > boardSize || col < 1 || col > boardSize || board[row - 1][col - 1] != EMPTY) {
+
+        if (row < 1 || row > boardSize || col < 1 || col > boardSize|| board[row - 1][col - 1] != EMPTY) {
             cout << "Invalid move! Try again.\n";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             continue;
@@ -114,8 +114,9 @@ void showMenu() {
 
         if (choice == 1) {
             if (!loadSettings()) {
-                cout << "No settings found! Set player names first.\nPress any key to return to the menu...";
-                _getch();
+                cout << "No settings found! Set player names first.\nPress Enter to return to the menu...";
+                cin.ignore();
+                cin.get();
                 continue;
             }
             startGame();
@@ -131,16 +132,18 @@ void showMenu() {
             getline(cin, player2);
 
             saveSettings();
-            cout << "Settings saved! Press any key to return to menu...";
-            _getch();
+            cout << "Settings saved! Press Enter to return to menu...";
+            cin.ignore();
+            cin.get();
         } else if (choice == 3) {
             showHistory();
-        } else if (choice == 4) {
-cout << "Thanks for playing! Goodbye.\n";
+} else if (choice == 4) {
+            cout << "Thanks for playing! Goodbye.\n";
             break;
         } else {
-            cout << "Invalid choice. Press any key to try again...";
-            _getch();
+            cout << "Invalid choice. Press Enter to try again...";
+            cin.ignore();
+            cin.get();
         }
     }
 }
